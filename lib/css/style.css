@@ -1,0 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+circle {
+  fill-opacity: 60%; }
+
+text {
+  font: bold 48px monospace; }
