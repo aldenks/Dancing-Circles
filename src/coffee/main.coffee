@@ -1,7 +1,8 @@
 WIDTH = document.documentElement.clientWidth
 HEIGHT = document.documentElement.clientHeight
 
-TICK_INTERVAL = 800
+MAX_CIRCLE_COUNT = WIDTH * HEIGHT * 0.0001
+TICK_INTERVAL = 1000
 ANIM_TIME = 0.8 * TICK_INTERVAL
 VERTICAL_MOVEMENT = 0.2
 t = 0
@@ -40,7 +41,7 @@ color_at_time = (t) -> (d) ->
 
 tick = ->
   data.push(t: ++t, x: Math.random(), y: Math.random())
-  data.shift() if t > 60
+  data.shift() if t > MAX_CIRCLE_COUNT
   randomize_y(data)
 
   circle = svg.selectAll("circle")
